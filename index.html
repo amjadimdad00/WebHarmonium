@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00fff5" />
+    <meta
+      name="description"
+      content="Play harmonium online for free with this virtual harmonium. Use keyboard or touch, control octave, volume, transpose and reverb easily."
+    />
+    <meta
+      name="keywords"
+      content="harmonium, virtual instrument, piano, online, music"
+    />
+    <meta name="author" content="Amjad Imdad" />
+    <meta property="og:title" content="Web Harmonium" />
+    <meta
+      property="og:description"
+      content="Play harmonium online with virtual keys, octave, volume and reverb controls."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/preview.png" />
+    <link rel="preload" href="/css/style.css" as="style" />
+    <link rel="preload" href="/js/app.js" as="script" />
+    <link
+      rel="canonical"
+      href="https://webharmonium-amjadimdad00.vercel.app/"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link rel="icon" href="/images/favicon.ico" sizes="48x48" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Play Harmonium Online | Virtual Harmonium Web App</title>
+  </head>
+  <body onload="loadApp()">
+    <header class="header">
+      <h1>Web Harmonium</h1>
+    </header>
+
+    <div class="panel" id="loadHarmoniumBtn">
+      <button class="btn" onclick="initHarmonium()">Load Harmonium</button>
+    </div>
+
+    <main
+      id="mainScreen"
+      aria-label="Harmonium Controls and Keyboard"
+      style="display: none"
+      aria-hidden="true"
+      role="main"
+    >
+      <div
+        class="keyboard-container"
+        id="keyboard-container"
+        role="application"
+        aria-label="Harmonium Keyboard"
+      >
+        <svg id="keyboard" width="800" height="150" tabindex="0"></svg>
+      </div>
+
+      <div class="controls">
+        <div class="control-card">
+          <label for="myRange">Volume</label>
+          <input
+            type="range"
+            id="myRange"
+            min="0"
+            max="100"
+            value="10"
+            aria-label="Volume"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="10"
+          />
+          <div id="volumeLevel">10%</div>
+        </div>
+
+        <div class="control-card">
+          <label>Octave</label>
+          <button
+            class="small-btn"
+            onclick="shiftOctave(-1)"
+            aria-label="Decrease Octave"
+          >
+            -
+          </button>
+          <span id="octave">3</span>
+          <button
+            class="small-btn"
+            onclick="shiftOctave(1)"
+            aria-label="Increase Octave"
+          >
+            +
+          </button>
+        </div>
+
+        <div class="control-card">
+          <label>Stack</label>
+          <button
+            class="small-btn"
+            onclick="changeStack(-1)"
+            aria-label="Decrease Stack"
+          >
+            -
+          </button>
+          <span id="stack">0</span>
+          <button
+            class="small-btn"
+            onclick="changeStack(1)"
+            aria-label="Increase Stack"
+          >
+            +
+          </button>
+        </div>
+
+        <div class="control-card">
+          <label>Transpose</label>
+          <button
+            class="small-btn"
+            onclick="shiftSemitone(-1)"
+            aria-label="Decrease Transpose"
+          >
+            -
+          </button>
+          <span id="transpose">0</span>
+          <button
+            class="small-btn"
+            onclick="shiftSemitone(1)"
+            aria-label="Increase Transpose"
+          >
+            +
+          </button>
+          <div id="rootNote">C</div>
+        </div>
+
+        <div class="control-card">
+          <label>Reverb</label>
+          <label class="switch">
+            <input type="checkbox" id="useReverb" checked aria-checked="true" />
+            <span class="toggle"></span>
+          </label>
+        </div>
+      </div>
+    </main>
+
+    <section
+      style="
+        max-width: 800px;
+        margin: 40px auto;
+        text-align: center;
+        opacity: 0.9;
+      "
+    >
+      <h2>Play Harmonium Online</h2>
+      <p>
+        This virtual harmonium lets you play music online using your keyboard,
+        mouse, or touch. It includes features like octave control, transpose,
+        note stacking, and reverb to create a realistic harmonium experience.
+      </p>
+
+      <p>
+        Whether you are learning music or practicing ragas, this online
+        harmonium simulator is simple, fast, and works on all devices.
+      </p>
+    </section>
+
+    <script src="/js/app.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "url": "https://webharmonium-amjadimdad00.vercel.app/",
+        "applicationCategory": "MusicApplication",
+        "operatingSystem": "Web",
+        "name": "Web Harmonium",
+        "description": "Play harmonium online with virtual keys, octave, volume and reverb controls.",
+        "keywords": [
+          "online harmonium",
+          "virtual piano",
+          "music app",
+          "play harmonium"
+        ],
+        "author": {
+          "@type": "Person",
+          "name": "Amjad Imdad"
+        },
+        "logo": "https://webharmonium-amjadimdad00.vercel.app/images/favicon.ico"
+      }
+    </script>
+  </body>
+</html>

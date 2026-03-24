@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webharmonium-amjadimdad00.vercel.app/sitemap.xml
